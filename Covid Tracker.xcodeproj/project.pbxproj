@@ -17,6 +17,7 @@
 		4D68F6B8249F289B00597F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D68F6B7249F289B00597F7F /* Assets.xcassets */; };
 		4D68F6BB249F289B00597F7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D68F6BA249F289B00597F7F /* Preview Assets.xcassets */; };
 		4D68F6BE249F289B00597F7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D68F6BC249F289B00597F7F /* LaunchScreen.storyboard */; };
+		4D937324249FF61B0060641C /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D937323249FF61B0060641C /* RecentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4D68F6BA249F289B00597F7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D68F6BD249F289B00597F7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D68F6BF249F289B00597F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D937323249FF61B0060641C /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
 		663ED63062E0DCCC72BD71F8 /* Pods_Covid_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Covid_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93238506A97AB7C170C1E9E9 /* Pods-Covid Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Covid Tracker/Pods-Covid Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		E5B60B4DEF2ED3E3C59B5D6A /* Pods-Covid Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid Tracker.release.xcconfig"; path = "Target Support Files/Pods-Covid Tracker/Pods-Covid Tracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				4D68EFD7249F2EF800830C2F /* Model.swift */,
+				4D68EFD5249F2AF700830C2F /* CovidFetchRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,7 +108,7 @@
 				4D68F6AE249F289800597F7F /* AppDelegate.swift */,
 				4D68F6B0249F289800597F7F /* SceneDelegate.swift */,
 				4D68F6B5249F289800597F7F /* ContentView.swift */,
-				4D68EFD5249F2AF700830C2F /* CovidFetchRequest.swift */,
+				4D937323249FF61B0060641C /* RecentView.swift */,
 				4D68F6B7249F289B00597F7F /* Assets.xcassets */,
 				4D68F6BC249F289B00597F7F /* LaunchScreen.storyboard */,
 				4D68F6BF249F289B00597F7F /* Info.plist */,
@@ -252,6 +255,7 @@
 				4D68F6B4249F289800597F7F /* Covid_Tracker.xcdatamodeld in Sources */,
 				4D68EFD8249F2EF800830C2F /* Model.swift in Sources */,
 				4D68F6B6249F289800597F7F /* ContentView.swift in Sources */,
+				4D937324249FF61B0060641C /* RecentView.swift in Sources */,
 				4D68F6B1249F289800597F7F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
