@@ -56,6 +56,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D68EFF9249F31A900830C2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D68EFD7249F2EF800830C2F /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D68EFFA249F31B800830C2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D68EFFB249F31C200830C2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4D68F6A2249F289800597F7F = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +99,13 @@
 		4D68F6AD249F289800597F7F /* Covid Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				4D68EFFB249F31C200830C2F /* ViewModel */,
+				4D68EFFA249F31B800830C2F /* View */,
+				4D68EFF9249F31A900830C2F /* Model */,
 				4D68F6AE249F289800597F7F /* AppDelegate.swift */,
 				4D68F6B0249F289800597F7F /* SceneDelegate.swift */,
 				4D68F6B5249F289800597F7F /* ContentView.swift */,
 				4D68EFD5249F2AF700830C2F /* CovidFetchRequest.swift */,
-				4D68EFD7249F2EF800830C2F /* Model.swift */,
 				4D68F6B7249F289B00597F7F /* Assets.xcassets */,
 				4D68F6BC249F289B00597F7F /* LaunchScreen.storyboard */,
 				4D68F6BF249F289B00597F7F /* Info.plist */,
