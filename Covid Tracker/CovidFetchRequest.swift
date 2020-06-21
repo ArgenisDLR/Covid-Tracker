@@ -55,6 +55,7 @@ class CovidFetchRequest: ObservableObject {
             
             
             let result = response.value
+            var allCountries : [CountryData] = []
             
             if result != nil {
                 
@@ -62,9 +63,22 @@ class CovidFetchRequest: ObservableObject {
                 
                 for countryData in dataDictionary {
                     
-                    print(countryData)
+                    let country = countryData["country"] as? String ?? "Error"
+                    let longitude = countryData["longitude"] as? Double ?? 0.0
+                    let latitude = countryData["latitude"] as? Double ?? 0.0
+                    
+                    let confirmed = countryData["confirmed"] as? Int64 ?? 0
+                    let deaths = countryData["deaths"] as? Int64 ?? 0
+                    let recovered = countryData["recovered"] as? Int64 ?? 0
+                    let critical = countryData["critical"] as? Int64 ?? 0
+                    
+                    let countryObject = CountryData(country: country, confirmed: confirmed, critical: critical, deaths: deaths, recovered: recovered, longitude: longitude, latitude: latitude)
+                    
+                    allCountries.append(countryObject)
                 }
             }
+            
+            self.allCountry = allCountries.sorted(by: { $0.confirmed > $1.confirmed })
         }
     }
 }
