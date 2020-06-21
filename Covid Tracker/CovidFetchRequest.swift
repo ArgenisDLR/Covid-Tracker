@@ -15,20 +15,19 @@ class CovidFetchRequest: ObservableObject {
     
 
     init() {
-        <#statements#>
+        
+        getCurrentTotal()
     }
     
     func getCurrentTotal() {
 
-        let headers = [
+        let headers: HTTPHeaders = [
             "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
             "x-rapidapi-key": "adb956b751mshacb4ace21a2a85dp179ab7jsncce7494717d1"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://covid-19-data.p.rapidapi.com/totals?format=json")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
-
-        
+        AF.request("https://covid-19-data.p.rapidapi.com/totals?format=json", headers: headers).responseJSON { response in
+            debugPrint(response)
+        }
     }
 }
