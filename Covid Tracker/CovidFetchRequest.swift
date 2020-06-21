@@ -15,19 +15,20 @@ class CovidFetchRequest: ObservableObject {
     
     @Published var allCountry: [CountryData] = []
     @Published var totalData: TotalData = testTotalData
-
+    
+    let headers: HTTPHeaders = [
+        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+        "x-rapidapi-key": "adb956b751mshacb4ace21a2a85dp179ab7jsncce7494717d1"
+    ]
+    
     init() {
         
         getCurrentTotal()
+        getAllCountries()
     }
     
     func getCurrentTotal() {
-
-        let headers: HTTPHeaders = [
-            "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-            "x-rapidapi-key": "adb956b751mshacb4ace21a2a85dp179ab7jsncce7494717d1"
-        ]
-
+        
         AF.request("https://covid-19-data.p.rapidapi.com/totals?format=json", headers: headers).responseJSON { response in
             
             let result = response.data
@@ -35,7 +36,7 @@ class CovidFetchRequest: ObservableObject {
             if result != nil {
                 
                 let json = JSON(result!)
-//                print(json)
+                //                print(json)
                 let confirmed = json[0]["confirmed"].intValue
                 let deaths = json[0]["deaths"].intValue
                 let recovered = json[0]["recovered"].intValue
@@ -44,6 +45,25 @@ class CovidFetchRequest: ObservableObject {
                 self.totalData = TotalData(confirmed: confirmed, critical: critical, deaths: deaths, recovered: recovered)
             } else {
                 self.totalData = testTotalData
+            }
+        }
+    }
+    
+    func getAllCountries() {
+        
+        AF.request("https://covid-19-data.p.rapidapi.com/country/all?format=json", headers: headers).responseJSON { response in
+            
+            
+            let result = response.value
+            
+            if result != nil {
+                
+                let dataDictionary = result as! [Dictionary<String, AnyObject>]
+                
+                for countryData in dataDictionary {
+                    
+                    print(countryData)
+                }
             }
         }
     }
