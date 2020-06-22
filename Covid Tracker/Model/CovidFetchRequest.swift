@@ -22,21 +22,22 @@ class CovidFetchRequest: ObservableObject {
     ]
     
     init() {
-        
-        getCurrentTotal()
+
         getAllCountries()
+        getCurrentTotal()
+        
     }
     
     func getCurrentTotal() {
         
-        AF.request("https://covid-19-data.p.rapidapi.com/totals?format=json", headers: headers).responseJSON { response in
+        AF.request("https://covid-19-data.p.rapidapi.com/totals?format=undefined", headers: headers).responseJSON { response in
             
             let result = response.data
             
             if result != nil {
                 
                 let json = JSON(result!)
-                //                print(json)
+                print(json)
                 let confirmed = json[0]["confirmed"].intValue
                 let deaths = json[0]["deaths"].intValue
                 let recovered = json[0]["recovered"].intValue
@@ -51,10 +52,11 @@ class CovidFetchRequest: ObservableObject {
     
     func getAllCountries() {
         
-        AF.request("https://covid-19-data.p.rapidapi.com/country/all?format=json", headers: headers).responseJSON { response in
+        AF.request("https://covid-19-data.p.rapidapi.com/help/countries?format=undefined", headers: headers).responseJSON { response in
             
             
             let result = response.value
+            
             var allCountries : [CountryData] = []
             
             if result != nil {
@@ -62,6 +64,8 @@ class CovidFetchRequest: ObservableObject {
                 let dataDictionary = result as! [Dictionary<String, AnyObject>]
                 
                 for countryData in dataDictionary {
+                    
+                    print(countryData)
                     
                     let country = countryData["country"] as? String ?? "Error"
                     let longitude = countryData["longitude"] as? Double ?? 0.0
@@ -82,3 +86,4 @@ class CovidFetchRequest: ObservableObject {
         }
     }
 }
+

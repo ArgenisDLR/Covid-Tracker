@@ -12,12 +12,15 @@ struct RecentView: View {
     
     @ObservedObject var covidFetch = CovidFetchRequest()
     @State var searchText : String = ""
+    @State var isSearchVisible = false
     
     var body: some View {
         
         NavigationView {
             
             VStack {
+                
+                TotalDataView(totalData: covidFetch.totalData)
                 
                 ListHeaderView()
                 
@@ -31,8 +34,25 @@ struct RecentView: View {
                     }
                 }
                 
-            } // end of v stack
-        } // end of navigation view
+            } // END OF VSTACK
+                .navigationBarTitle("Recent Data", displayMode: .inline)
+                
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        
+                        self.isSearchVisible.toggle()
+                        
+                        if !self.isSearchVisible {
+                            self.searchText = ""
+                        }
+                        
+                    }, label: {
+                        
+                        Image(systemName: "magnifyingglass")
+                        
+                    })
+            )
+        } // END OF NAVIGATION VIEW
     }
 }
 
