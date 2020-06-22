@@ -18,7 +18,7 @@ class CovidFetchRequest: ObservableObject {
     
     let headers: HTTPHeaders = [
         "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-        "x-rapidapi-key": "adb956b751mshacb4ace21a2a85dp179ab7jsncce7494717d1"
+        "x-rapidapi-key": "d172e810e7msh47584ae043c146dp12d8eejsnb0b3c42c4a59"
     ]
     
     init() {
@@ -30,7 +30,7 @@ class CovidFetchRequest: ObservableObject {
     
     func getCurrentTotal() {
         
-        AF.request("https://covid-19-data.p.rapidapi.com/totals?format=json", headers: headers).responseJSON { response in
+        AF.request("https://covid-19-data.p.rapidapi.com/totals?format=undefined", headers: headers).responseJSON { response in
             
             let result = response.data
             
@@ -54,7 +54,7 @@ class CovidFetchRequest: ObservableObject {
     
     func getAllCountries() {
         
-        AF.request("https://covid-19-data.p.rapidapi.com/help/countries?format=undefined", headers: headers).responseJSON { response in
+        AF.request("https://covid-19-data.p.rapidapi.com/country/all?format=undefined", headers: headers).responseJSON { response in
             
             
             let result = response.value

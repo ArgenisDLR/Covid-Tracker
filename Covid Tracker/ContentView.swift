@@ -22,7 +22,12 @@ struct ContentView: View {
             }
             .tag(0)
             
-            // add another item
+            MapContainerView()
+                .tabItem {
+                    Tab(imageName: "map", text: "Map")
+            }
+            .tag(1)
+            
         }
         
     }
