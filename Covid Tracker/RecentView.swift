@@ -20,6 +20,10 @@ struct RecentView: View {
             
             VStack {
                 
+                if isSearchVisible {
+                    SearchView(searchText: $searchText)
+                }
+                
                 TotalDataView(totalData: covidFetch.totalData)
                 
                 ListHeaderView()
