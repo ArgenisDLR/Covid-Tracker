@@ -37,7 +37,9 @@ class CovidFetchRequest: ObservableObject {
             if result != nil {
                 
                 let json = JSON(result!)
+                
                 print(json)
+                
                 let confirmed = json[0]["confirmed"].intValue
                 let deaths = json[0]["deaths"].intValue
                 let recovered = json[0]["recovered"].intValue
@@ -52,7 +54,7 @@ class CovidFetchRequest: ObservableObject {
     
     func getAllCountries() {
         
-        AF.request("https://covid-19-data.p.rapidapi.com/help/countries?format=json", headers: headers).responseJSON { response in
+        AF.request("https://covid-19-data.p.rapidapi.com/help/countries?format=undefined", headers: headers).responseJSON { response in
             
             
             let result = response.value

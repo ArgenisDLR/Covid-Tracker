@@ -16,9 +16,24 @@ struct CountryDetailRow: View {
     
     var body: some View {
         
-        
-        
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            HStack {
+                
+                Text(self.name)
+                    .font(.body)
+                    .padding(5)
+                Spacer()
+                Text(self.name)
+                    .font(.subheadline)
+                    .padding(5)
+                    .foregroundColor(color)
+                
+            }
+            Divider()
+        }
+        .padding(.leading)
+        .padding(.trailing)
     }
 }
 
