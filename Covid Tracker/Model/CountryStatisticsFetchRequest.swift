@@ -21,7 +21,7 @@ class CountryStatisticsFetchRequest: ObservableObject {
     ]
     
     init() {
-        getStatsFor(country: "usa")
+        
     }
     
     func getStatsFor(country: String) {
@@ -47,8 +47,6 @@ class CountryStatisticsFetchRequest: ObservableObject {
                 let recoveredCases = json["response"][0]["cases"]["recovered"].intValue
                 
                 self.detailedCountryData = DetailCountryData(country: country, confirmedCases: totalCases, newCases: newCases, recoveredCases: recoveredCases, criticalCases: criticalCases, activeCases: activeCases, deaths: deaths, newDeaths: newDeaths, testsDone: tests)
-                
-            } else {
                 
             }
         }
