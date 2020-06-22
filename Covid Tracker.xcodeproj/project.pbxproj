@@ -17,6 +17,7 @@
 		4D68F6B8249F289B00597F7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D68F6B7249F289B00597F7F /* Assets.xcassets */; };
 		4D68F6BB249F289B00597F7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D68F6BA249F289B00597F7F /* Preview Assets.xcassets */; };
 		4D68F6BE249F289B00597F7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D68F6BC249F289B00597F7F /* LaunchScreen.storyboard */; };
+		4D8CAAE924A03B2B00318A92 /* TotalDataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8CAAE824A03B2B00318A92 /* TotalDataCard.swift */; };
 		4D937324249FF61B0060641C /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D937323249FF61B0060641C /* RecentView.swift */; };
 		4D937326249FF7FC0060641C /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D937325249FF7FC0060641C /* ListHeaderView.swift */; };
 		4D937328249FFEB20060641C /* CountryDataRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D937327249FFEB20060641C /* CountryDataRowView.swift */; };
@@ -35,6 +36,7 @@
 		4D68F6BA249F289B00597F7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D68F6BD249F289B00597F7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D68F6BF249F289B00597F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D8CAAE824A03B2B00318A92 /* TotalDataCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalDataCard.swift; sourceTree = "<group>"; };
 		4D937323249FF61B0060641C /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
 		4D937325249FF7FC0060641C /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 		4D937327249FFEB20060641C /* CountryDataRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataRowView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,8 @@
 		4D68EFFA249F31B800830C2F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4D937325249FF7FC0060641C /* ListHeaderView.swift */,
+				4D937327249FFEB20060641C /* CountryDataRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,12 +115,11 @@
 				4D68EFFB249F31C200830C2F /* ViewModel */,
 				4D68EFFA249F31B800830C2F /* View */,
 				4D68EFF9249F31A900830C2F /* Model */,
+				4D8CAAE724A03AEF00318A92 /* Extensions */,
 				4D68F6AE249F289800597F7F /* AppDelegate.swift */,
 				4D68F6B0249F289800597F7F /* SceneDelegate.swift */,
+				4D8CAAE824A03B2B00318A92 /* TotalDataCard.swift */,
 				4D68F6B5249F289800597F7F /* ContentView.swift */,
-				4D937325249FF7FC0060641C /* ListHeaderView.swift */,
-				4D937327249FFEB20060641C /* CountryDataRowView.swift */,
-				4D93732924A008BB0060641C /* Extension.swift */,
 				4D937323249FF61B0060641C /* RecentView.swift */,
 				4D68F6B7249F289B00597F7F /* Assets.xcassets */,
 				4D68F6BC249F289B00597F7F /* LaunchScreen.storyboard */,
@@ -133,6 +136,14 @@
 				4D68F6BA249F289B00597F7F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4D8CAAE724A03AEF00318A92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D93732924A008BB0060641C /* Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C8BED8E24EF6B012AB57B121 /* Pods */ = {
@@ -268,6 +279,7 @@
 				4D937324249FF61B0060641C /* RecentView.swift in Sources */,
 				4D68F6B1249F289800597F7F /* SceneDelegate.swift in Sources */,
 				4D937326249FF7FC0060641C /* ListHeaderView.swift in Sources */,
+				4D8CAAE924A03B2B00318A92 /* TotalDataCard.swift in Sources */,
 				4D937328249FFEB20060641C /* CountryDataRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

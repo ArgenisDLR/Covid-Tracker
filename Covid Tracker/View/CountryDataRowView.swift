@@ -15,41 +15,41 @@ struct CountryDataRowView: View {
     var body: some View {
         
         HStack {
-            Text("Country")
-                .fontWeight(.bold)
+            Text(countryData.country)
+                .fontWeight(.medium)
                 .font(.subheadline)
+                .lineLimit(2)
                 .frame(width: 110, alignment: .leading)
-                .padding(.leading, 15)
             
             Spacer()
             
-            Text("Conf.")
-                .fontWeight(.bold)
+            Text(countryData.confirmed.formatNumber())
                 .font(.subheadline)
                 .frame(width: 40)
                 .padding(.leading, 5)
             
             Spacer()
             
-            Text("Death")
-                .fontWeight(.bold)
+            Text(countryData.deaths.formatNumber())
+                .frame(width: 50, height: 40, alignment: .center)
                 .font(.subheadline)
-                .frame(width: 40)
+                .foregroundColor(.red)
                 .padding(.leading, 5)
-            
+                
+        
             Spacer()
             
-            Text("Recovered")
-                .fontWeight(.bold)
+            Text(countryData.recovered.formatNumber())
+                .frame(width: 50, height: 40, alignment: .center)
                 .font(.subheadline)
-                .frame(width: 40)
-                .padding(.trailing, 15)
+                .foregroundColor(.green)
+                
         }
     }
 }
 
 struct CountryDataRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryDataRowView()
+        CountryDataRowView(countryData: testCountryData)
     }
 }
