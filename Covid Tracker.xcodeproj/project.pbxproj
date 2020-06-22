@@ -80,6 +80,7 @@
 			children = (
 				4D937325249FF7FC0060641C /* ListHeaderView.swift */,
 				4D937327249FFEB20060641C /* CountryDataRowView.swift */,
+				4D8CAAE824A03B2B00318A92 /* TotalDataCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,7 +119,6 @@
 				4D8CAAE724A03AEF00318A92 /* Extensions */,
 				4D68F6AE249F289800597F7F /* AppDelegate.swift */,
 				4D68F6B0249F289800597F7F /* SceneDelegate.swift */,
-				4D8CAAE824A03B2B00318A92 /* TotalDataCard.swift */,
 				4D68F6B5249F289800597F7F /* ContentView.swift */,
 				4D937323249FF61B0060641C /* RecentView.swift */,
 				4D68F6B7249F289B00597F7F /* Assets.xcassets */,
