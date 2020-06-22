@@ -20,32 +20,36 @@ struct ListHeaderView: View {
                 .font(.subheadline)
                 .frame(width: 110, alignment: .leading)
                 .padding(.leading, 15)
+//                .foregroundColor(Color.white)
             
             Spacer()
             
-            Text("Conf.")
+            Text("Confirmed")
                 .fontWeight(.bold)
                 .font(.subheadline)
-                .frame(width: 40)
+                .frame(height: 40)
                 .padding(.leading, 5)
+//                .foregroundColor(Color.white)
             
             Spacer()
             
             Text("Death")
                 .fontWeight(.bold)
                 .font(.subheadline)
-                .frame(width: 40)
+                .frame(height: 40)
                 .padding(.leading, 5)
+//                .foregroundColor(Color.white)
             
             Spacer()
             
             Text("Recovered")
                 .fontWeight(.bold)
                 .font(.subheadline)
-                .frame(width: 40)
+                .frame(height: 40)
                 .padding(.trailing, 15)
+//                .foregroundColor(Color.white)
         }
-        
+            
         .background(Color.gray)
     }
 }

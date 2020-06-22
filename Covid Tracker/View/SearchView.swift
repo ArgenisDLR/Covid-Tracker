@@ -14,7 +14,6 @@ struct SearchView: View {
     
     var body: some View {
         
-        
         HStack {
             
             TextField("Country", text: $searchText)

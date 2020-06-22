@@ -17,7 +17,7 @@ class CountryStatisticsFetchRequest: ObservableObject {
     let headers: HTTPHeaders = [
         
         "x-rapidapi-host": "covid-193.p.rapidapi.com",
-        "x-rapidapi-key": "d172e810e7msh47584ae043c146dp12d8eejsnb0b3c42c4a59"
+        "x-rapidapi-key": "adb956b751mshacb4ace21a2a85dp179ab7jsncce7494717d1"
     ]
     
     init() {
