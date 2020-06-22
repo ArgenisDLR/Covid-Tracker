@@ -12,21 +12,21 @@ import SwiftyJSON
 
 class CountryStatisticsFetchRequest: ObservableObject {
     
-    @Published var totalData: TotalData = testTotalData
+    @Published var detailedCountryData: DetailCountryData?
     
     let headers: HTTPHeaders = [
-
+        
         "x-rapidapi-host": "covid-193.p.rapidapi.com",
         "x-rapidapi-key": "d172e810e7msh47584ae043c146dp12d8eejsnb0b3c42c4a59"
     ]
     
     init() {
-        
+        getStatsFor(country: "usa")
     }
     
-    func getCurrentTotal() {
+    func getStatsFor(country: String) {
         
-        AF.request("https://covid-19-data.p.rapidapi.com/totals?format=undefined", headers: headers).responseJSON { response in
+        AF.request("https://covid-193.p.rapidapi.com/statistics?country=\(country)", headers: headers).responseJSON { response in
             
             let result = response.data
             
@@ -34,19 +34,24 @@ class CountryStatisticsFetchRequest: ObservableObject {
                 
                 let json = JSON(result!)
                 
-                print(json)
+                let country = json["response"][0]["country"].stringValue
                 
-                let confirmed = json[0]["confirmed"].intValue
-                let deaths = json[0]["deaths"].intValue
-                let recovered = json[0]["recovered"].intValue
-                let critical = json[0]["critical"].intValue
+                let deaths = json["response"][0]["deaths"]["total"].intValue
+                let newDeaths = json["response"][0]["deaths"]["new"].intValue
                 
-                self.totalData = TotalData(confirmed: confirmed, critical: critical, deaths: deaths, recovered: recovered)
+                let tests = json["response"][0]["tests"]["total"].intValue
+                let criticalCases = json["response"][0]["cases"]["critical"].intValue
+                let totalCases = json["response"][0]["cases"]["total"].intValue
+                let activeCases = json["response"][0]["cases"]["active"].intValue
+                let newCases = json["response"][0]["cases"]["new"].intValue
+                let recoveredCases = json["response"][0]["cases"]["recovered"].intValue
+                
+                self.detailedCountryData = DetailCountryData(country: country, confirmedCases: totalCases, newCases: newCases, recoveredCases: recoveredCases, criticalCases: criticalCases, activeCases: activeCases, deaths: deaths, newDeaths: newDeaths, testsDone: tests)
+                
             } else {
-                self.totalData = testTotalData
+                
             }
         }
     }
-    
 }
 

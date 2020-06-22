@@ -38,7 +38,7 @@ class CovidFetchRequest: ObservableObject {
                 
                 let json = JSON(result!)
                 
-                print(json)
+//                print(json)
                 
                 let confirmed = json[0]["confirmed"].intValue
                 let deaths = json[0]["deaths"].intValue
@@ -67,7 +67,7 @@ class CovidFetchRequest: ObservableObject {
                 
                 for countryData in dataDictionary {
                     
-                    print(countryData)
+//                    print(countryData)
                     
                     let country = countryData["country"] as? String ?? "Error"
                     let longitude = countryData["longitude"] as? Double ?? 0.0
